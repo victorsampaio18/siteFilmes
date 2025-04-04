@@ -1,0 +1,74 @@
+<div class="filmes-container">
+  <!-- Título da página -->
+  <h3>Filmes</h3>
+  <hr />
+  
+  <!-- Div com a barra de pesquisa e o botão de filtro -->
+  <div class="pesquisa-container">
+    <input type="text" placeholder="Buscar filme..." [(ngModel)]="termoPesquisa" (input)="filtrarFilmes()"/>
+    <button (click)="abrirModal()" class="filter-btn">Filtrar</button>
+  </div>
+
+  <!-- Estrutura de repetição dos filmes -->
+  <div class="filmes-grid">
+    <div class="filme-item" *ngFor="let filme of filmesFiltrados" (click)="abrirDetalhes(filme)">
+      <img [src]="filme.imagem" [alt]="filme.titulo">
+      <p>{{ filme.titulo }}</p>
+    </div>
+  </div>
+
+  <!-- Modal com as informações do filme que foi selecionado -->
+  <div class="modal-overlay" *ngIf="filmeSelecionado">
+    <div class="modal-content">
+      <span class="close-button" (click)="fecharDetalhes()">&times;</span>
+  
+      <div class="modal-body">
+        <!-- Imagem do Filme -->
+        <div class="modal-img">
+          <img [src]="filmeSelecionado.imagem" [alt]="filmeSelecionado.titulo">
+        </div>
+  
+        <!-- Informações do Filme -->
+        <div class="modal-info">
+          <h2>MARVEL STUDIOS {{ filmeSelecionado.titulo }}</h2>
+          <p><strong>Gênero:</strong> {{ filmeSelecionado.genero }}</p>
+          <p><strong>Data de Lançamento:</strong> {{ filmeSelecionado.mes }} / {{ filmeSelecionado.ano }}</p>
+          <p><strong>Elenco:</strong> {{ filmeSelecionado.elenco }}</p>
+          <p><strong>Diretor:</strong> {{ filmeSelecionado.diretor }}</p>
+          <p><strong>Sinopse:</strong> {{ filmeSelecionado.sinopse }}</p>
+
+          <!-- Botão para assistir o filme 🎬-->
+          <a [href]="filmeSelecionado?.link" target="_blank">
+            <button class="watch-button">Assista Aqui</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal com as opções de filtro -->
+  <div *ngIf="mostrarModal" class="modal-filter">
+      <div class="modal-content-filter">
+        <h4>Filtrar</h4>
+
+        <!-- Filtro por Ano -->
+        <label for="ano">Ano:</label>
+        <select id="ano" [(ngModel)]="filtroAno">
+          <option value="">Todos</option>
+          <option *ngFor="let ano of anosDisponiveis" [value]="ano">{{ ano }}</option>
+        </select>
+
+        <!-- Filtro por Mês -->
+        <label for="mes">Mês:</label>
+        <select id="mes" [(ngModel)]="filtroMes">
+          <option value="">Todos</option>
+          <option *ngFor="let mes of mesesDisponiveis" [value]="mes">{{ mes }}</option>
+        </select>
+
+        <!-- Botões -->
+        <button (click)="aplicarFiltro()">Aplicar</button>
+        <button (click)="fecharModal()">Fechar</button>
+      </div>
+  </div>
+
+</div>

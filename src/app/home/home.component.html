@@ -1,0 +1,29 @@
+<div class="banner-home">
+  <img src="assets/images/home/banner.png">
+</div>
+<div class="filmes-container">
+  <!-- Título de notícias -->
+  <h3>Notícias</h3>
+  <hr />
+
+  <!-- Estrutura de repetição que gera a notícia -->
+  <div class="news-grid">
+    <div class="news-item" *ngFor="let news of newsFiltrados">
+      <img [src]="news.imagem">
+      <h4>{{ news.titulo }}</h4>
+      <p>{{ news.texto }}</p>
+    </div>
+  </div>
+
+  <hr />
+
+  <!-- Botões para as páginas especificas -->
+  <div class="pesquisa-container">
+    <button class="home-btn" routerLink="/filmes" routerLinkActive="active">Filmes</button>
+    <button class="home-btn" routerLink="/personagens" routerLinkActive="active">Personagens</button>
+    <button class="home-btn" routerLink="/atores" routerLinkActive="active">Atores</button>
+  </div>
+
+  <router-outlet></router-outlet> <!-- Permite usar o routerlink -->
+
+</div>

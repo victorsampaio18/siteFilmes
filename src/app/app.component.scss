@@ -1,0 +1,137 @@
+.navbar {
+  /* Define a estilização para a navbar */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #000000;
+  padding: 10px 20px;
+}
+
+/* Define o tamanho e posição do espaço para os itens na navbar */
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 2500px;
+}
+
+/* Define o tamanho da imagem da logo na navbar */
+.logo {
+  height: 50px;
+}
+
+/* Define a estilização dos itens na navbar */
+.nav-menu {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0px;
+
+    li {
+      display: flex; /* Adicionando display flex para os itens */
+      align-items: center;
+
+      /* Cria a estilização padrão dos itens na navbar */
+      a {
+        text-decoration: none;
+        color: #b0b0b0;
+        font-size: 16px;
+        padding: 8px 14px;
+        border-radius: 4px;
+        align-items: center;
+        cursor: pointer;
+        transition: transform 0.7s ease-in-out, color 0.4s ease-in-out;
+
+        /* Cria o efeito para mudar de cor e tamanho o texto do item selecionado */
+        &.active {
+          color: #ffffff;
+          font-size: 18px;
+        }
+
+        /* Cria o efeito para mudar a cor e o tamanho do texto ao passar com o mouse por cima */
+        &:hover {
+          color: white;
+          transform: scale(1.2);
+        }
+      }
+    }
+  }  
+}
+
+/* Esconder o botão no desktop */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .nav-menu {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+
+    ul {
+      list-style: none;
+      gap: 5px;
+
+      li {
+        width: 80%;
+        display: inline-block;
+
+        a {
+          text-decoration: none;
+          color: #b0b0b0;
+          font-size: 12px;
+          padding: 8px 15px;
+          border-radius: 4px;
+          align-items: center;
+          cursor: pointer;
+          transition: transform 0.7s ease-in-out, color 0.4s ease-in-out;
+      
+          &.active {
+            color: #ffffff;
+            font-size: 14px;
+          }
+      
+          &:hover {
+            color: white;
+            transform: scale(1.2);
+          }
+        }
+      }
+    }
+  }
+
+  .nav-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+
+  .logo {
+    height: auto;
+    width: 150px;
+    align-items: center;
+    display: flex;
+    margin: 0 auto 15px auto
+  }
+}

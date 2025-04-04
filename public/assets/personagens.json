@@ -1,0 +1,23 @@
+[
+    {
+        "nome": "Capitão América",
+        "imagem": "https://p2.trrsf.com/image/fget/cf/1200/1600/middle/images.terra.com/2025/02/13/2104188096-chris-evans-retorna-como-steve-rogers-em-capitao-america-admiravel-mundo-novo-novo-filme-do-universo-cinematografico-da-marvel.jpg",
+        "starring": "Chris Evans",
+        "filmes": "Capitão América - Primeiro Vingador | Os Vingadores | Capitão América - Soldado Invernal | Vingadores - Era de Ultron | Capitão América - Guerra Civil | Vingadores - Guerra Infinita | Vingadores - Ultimato",
+        "universo": "616"
+    },
+    {
+        "nome": "Deadpool",
+        "imagem": "https://static.wikia.nocookie.net/universocinematograficomarvel/images/c/ca/Deadpool.png/revision/latest?cb=20240722011551&path-prefix=pt",
+        "starring": "Ryan Reynolds",
+        "filmes": "Deadpool | Deadpool 2 | Deadpool e Wolverine",
+        "universo": "10005"
+    },
+    {
+        "nome": "Feiticeira Escarlate",
+        "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReYJN6jqNnmP_0oZC7jHpNVOo9ggkkbyHc3Q3UZFlK08zt08GJxQ_ORTpYg77InKfgffM&usqp=CAU",
+        "starring": "Elizabeth Olsen",
+        "filmes": "Vingadores - Era de Ultron | Capitão América - Guerra Civil | Vingadores - Guerra Infinita | Vingadores - Ultimato | Wandavision | Doutor Estranho no Multiverso da Loucura",
+        "universo": "616"
+    }
+]

@@ -1,0 +1,68 @@
+<div class="personagem-container">
+  <!-- Título da página -->
+  <h3>Personagens</h3>
+  <hr />
+  
+  <!-- Div com a barra de pesquisa e o botão de filtro -->
+  <div class="pesquisa-container">
+    <input type="text" placeholder="Buscar personagem..." [(ngModel)]="termoPesquisa" (input)="filtrarPersonagens()"/>
+    <button (click)="abrirModal()" class="filter-btn">Filtrar</button>
+  </div>
+  
+  <!-- Estrutura de repetição dos personagens -->
+  <div class="personagens-grid">
+    <div class="personagem-item" *ngFor="let personagem of personagemFiltrados" (click)="abrirDetalhes(personagem)">
+      <img [src]="personagem.imagem" [alt]="personagem.nome">
+      <p>{{ personagem.nome }}</p>
+    </div>
+  </div>
+  
+  <!-- Modal com as informações do personagem que foi selecionado -->
+  <div class="modal-overlay" *ngIf="personagemSelecionado">
+    <div class="modal-content">
+      <span class="close-button" (click)="fecharDetalhes()">&times;</span>
+    
+      <div class="modal-body">
+        <!-- Imagem do personagem -->
+        <div class="modal-img">
+          <img [src]="personagemSelecionado.imagem" [alt]="personagemSelecionado.nome">
+        </div>
+    
+        <!-- Informações do personagem -->
+        <div class="modal-info">
+          <h2>{{ personagemSelecionado.nome }}</h2>
+          <p><strong>Interpretado por </strong> {{ personagemSelecionado.starring }}</p>
+          <p><strong>Aparições:</strong> {{ personagemSelecionado.filmes }}</p>
+          <p><strong>Universo:</strong> {{ personagemSelecionado.universo }}</p>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal com as opções de filtro -->
+  <div *ngIf="mostrarModal" class="modal-filter">
+    <div class="modal-content-filter">
+      <h4>Filtrar</h4>
+
+      <!-- Filtro por Universo do personagem -->
+      <label for="ano">Universo:</label>
+      <select id="ano" [(ngModel)]="filtroUniverso">
+        <option value="">Todos</option>
+        <option *ngFor="let universo of universoDisponiveis" [value]="universo">{{ universo }}</option>
+      </select>
+
+      <!-- Filtro por ator ou atriz -->
+      <label for="mes">Atores:</label>
+      <select id="mes" [(ngModel)]="filtroAtores">
+        <option value="">Todos</option>
+        <option *ngFor="let starring of atoresDisponiveis" [value]="starring">{{ starring }}</option>
+      </select>
+
+      <!-- Botões -->
+      <button (click)="aplicarFiltro()">Aplicar</button>
+      <button (click)="fecharModal()">Fechar</button>
+    </div>
+  </div>
+
+</div>

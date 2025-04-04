@@ -1,0 +1,61 @@
+<div class="personagem-container">
+  <!-- Título da página -->
+  <h3>Atores</h3>
+  <hr />
+  
+  <!-- Div com a barra de pesquisa e o botão de filtro -->
+  <div class="pesquisa-container">
+    <input type="text" placeholder="Buscar atores..." [(ngModel)]="termoPesquisa" (input)="filtrarAtores()"/>
+    <button (click)="abrirModal()" class="filter-btn">Filtrar</button>
+  </div>
+  
+  <!-- Estrutura de repetição dos atores -->
+  <div class="personagens-grid">
+    <div class="personagem-item" *ngFor="let ator of atoresFiltrados" (click)="abrirDetalhes(ator)">
+      <img [src]="ator.imagem" [alt]="ator.nome">
+      <p>{{ ator.nome }}</p>
+    </div>
+  </div>
+  
+  <!-- Modal com as informações do ator ou atriz que foi selecionado -->
+  <div class="modal-overlay" *ngIf="atorSelecionado">
+    <div class="modal-content">
+      <span class="close-button" (click)="fecharDetalhes()">&times;</span>
+    
+      <div class="modal-body">
+        <!-- Imagem do ator ou atriz-->
+        <div class="modal-img">
+          <img [src]="atorSelecionado.imagem" [alt]="atorSelecionado.nome">
+        </div>
+    
+        <!-- Informações do ator ou atriz -->
+        <div class="modal-info">
+          <h2>{{ atorSelecionado.nome }}</h2>
+          <p><strong>Gênero: </strong> {{ atorSelecionado.genero }}</p>
+          <p><strong>Personagens: </strong> {{ atorSelecionado.personagens }}</p>
+          <p><strong>Filmes: </strong> {{ atorSelecionado.filmes }}</p>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal com as opções de filtro -->
+  <div *ngIf="mostrarModal" class="modal-filter">
+    <div class="modal-content-filter">
+      <h4>Filtrar</h4>
+
+      <!-- Filtro por gênero -->
+      <label for="mes">Gênero:</label>
+      <select id="mes" [(ngModel)]="filtroGenero">
+        <option value="">Todos</option>
+        <option *ngFor="let genero of generoDisponiveis" [value]="genero">{{ genero }}</option>
+      </select>
+
+      <!-- Botões -->
+      <button (click)="aplicarFiltro()">Aplicar</button>
+      <button (click)="fecharModal()">Fechar</button>
+    </div>
+  </div>
+
+</div>

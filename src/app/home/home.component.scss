@@ -1,0 +1,188 @@
+.filmes-container {
+    /* Define a estilização da página */
+    background-color: #8B0000;
+    min-height: 100vh;
+    padding: 20px;
+    color: white;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Define o background do banner */
+.banner-home {
+    background-color: #000000;
+}
+
+/* Define a estilização da imagem no banner */
+.banner-home img{
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+    opacity: 0.8;
+}
+
+/* Define a estilização do h3 na página */
+h3 {
+    padding-top: 20px;
+    font-size: 30px;
+    margin-bottom: 10px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    padding-left: 15px;
+}
+
+/* Define a estilização do h4 na página */
+h4 {
+    font-size: 20px;
+}
+
+/* Define a estilização do hr na página */
+hr {
+    width: 70%;
+    margin: 10px auto;
+    border: 1px solid white;
+}
+
+/* Define a estilização do grid das notícias */
+.news-grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+}
+
+/* Define a estilização de cada notícia */
+.news-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    width: 80%; 
+    max-width: 900px;
+}
+
+/* Define a estilização da imagem de cada notícia */
+.news-item img {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    max-height: 225px;
+    border-radius: 8px;
+}
+
+/* Define a estilização do texto de cada notícia */
+.news-item p {
+    width: 100%;
+    color: white;
+    text-align: justify;
+}
+
+/* Define a estilização do título de cada notícia */
+.news-item h4 {
+    width: 100%;
+    color: white;
+    text-align: justify;
+}
+
+/* Define a posição dos botões */
+.pesquisa-container {
+    width: 65%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px auto;
+
+    /* Define a estilização dos botões na home */
+    button {
+      width: 30%;
+      height: 80px;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      font-size: 22px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.7s;
+    }
+    
+    .home-btn {
+      background-color: #000000;
+      color: #ffffff;
+    }
+    
+    /* Cria o efeito de mudar de cor e aumentar o tamanho ao passar o mouse */
+    button:hover {
+        background-color: #ffffff;
+        color: #000000;
+        transform: scale(1.05);
+    }
+
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .filmes-container {
+        min-height: 100vh;
+        color: white;
+        text-align: justify;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .news-grid {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    h3 {
+        padding-top: 10px;
+        font-size: 30px;
+        margin-bottom: 10px;
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        padding-left: 0px;
+    }
+
+    hr {
+        width: 80%;
+    }
+
+    .pesquisa-container {
+        width: 65%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin: 20px auto;
+
+        button {
+            width: 80%;
+            height: 80px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 22px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.7s;
+          }
+    }
+}

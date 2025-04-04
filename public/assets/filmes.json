@@ -1,0 +1,35 @@
+[
+    {
+      "titulo": "Os Vingadores",
+      "imagem": "https://static.wikia.nocookie.net/marvelcinematicuniverse/images/b/b6/Poster_de_Marvel%27s_Avengers.jpg/revision/latest?cb=20200704204510&path-prefix=pt-br",
+      "genero": "Ação, Aventura",
+      "mes": "Abril",
+      "ano": "2012",
+      "elenco": "Robert Downey Jr - Chris Evans - Scarlett Johansson - Mark Ruffalo - Chris Hemsworth - Jeremy Renner - Samuel L. Jackson - Tom Hiddleston",
+      "diretor": "Joss Whedon",
+      "sinopse": "Loki, o irmão de Thor, ganha acesso ao poder ilimitado do cubo cósmico ao roubá-lo de dentro das instalações da S.H.I.E.L.D. Nick Fury, o diretor desta agência que mantém a paz, logo reúne os únicos super-heróis que serão capazes de defender a Terra de ameaças sem precedentes. Homem de Ferro, Capitão América, Hulk, Thor, Viúva Negra e Gavião Arqueiro formam o time dos sonhos de Fury.",
+      "link": "https://www.disneyplus.com/pt-br"
+    },
+    {
+      "titulo": "Homem-Formiga",
+      "imagem": "https://br.web.img3.acsta.net/pictures/15/05/06/15/31/443417.jpg",
+      "genero": "Ação, Comédia",
+      "mes": "Julho",
+      "ano": "2015",
+      "elenco": "Paul Rudd - Evangeline Lilly - Michael Douglas - Michael Peña - David Dastmalchian",
+      "diretor": "Pyeton Reed",
+      "sinopse": "Dr. Hank Pym transforma um talentoso ladrão no herói Homem-Formiga. Ele quer impedir que seu antigo pupilo consiga replicar a fórmula da roupa que dá o poder do encolhimento, força sobre-humana e a capacidade de controlar um exército de formigas.",
+      "link": "https://www.disneyplus.com/pt-br"
+    },
+    {
+      "titulo": "Capitão América - Guerra Civil",
+      "imagem": "https://br.web.img3.acsta.net/pictures/16/03/10/20/36/363874.jpg",
+      "genero": "Ação, Aventura",
+      "mes": "Abril",
+      "ano": "2016",
+      "elenco": "Chris Evans - Robert Downey Jr - Scarlett Johansson - Jeremy Renner - Tom Holland - Chadwick Boseman - Elizabeth Olsen - Sebastian Stan - Anthony Mackie - Paul Rudd - Paul Bettany - Don Cheadle",
+      "diretor": "Anthony Russo - Joe Russo",
+      "sinopse": "Depois do ataque de Ultron, os políticos decidem controlar os Vingadores, já que suas ações afetam toda a humanidade. A decisão coloca o Capitão América em rota de colisão com o Homem de Ferro.",
+      "link": "https://www.disneyplus.com/pt-br"
+    }
+  ]  

@@ -1,0 +1,21 @@
+<nav class="navbar">
+  <div class="nav-container">
+    <!-- Logo do Site -->
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtm0SfWQkrADuO77eW04BQy42hBk9EQdB2KA&s" alt="Logo do Site" class="logo">
+
+    <!-- Menu horizontal com as páginas -->
+    <div class="nav-menu">
+      <ul>
+        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">HOME</a></li>
+        <li><a routerLink="/filmes" routerLinkActive="active">FILMES</a></li>
+        <li><a routerLink="/personagens" routerLinkActive="active">PERSONAGENS</a></li>
+        <li><a routerLink="/atores" routerLinkActive="active">ATORES</a></li>
+      </ul>
+    </div>
+    
+  </div>
+</nav>
+
+<router-outlet></router-outlet> <!-- Permite usar o routerlink -->
+
+<app-footer></app-footer> <!-- Carrega o rodapé da página -->

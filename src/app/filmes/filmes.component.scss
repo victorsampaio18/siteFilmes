@@ -1,0 +1,436 @@
+.filmes-container {
+  /* Define a estilização da página */
+    background-color: #8B0000;
+    min-height: 100vh;
+    padding: 20px;
+    color: white;
+    text-align: center;
+  }
+  
+  /* Define a estilização do h3 de toda a página */
+  h3 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    padding-left: 15px;
+  }
+
+  /* Define a estilização do h4 de toda a página */
+  h4 {
+    font-size: 20px;
+  }
+  
+  /* Define a estilização do hr de toda a página */
+  hr {
+    width: 70%;
+    margin: 10px auto;
+    border: 1px solid white;
+  }
+
+  /* Define a estilização dos links de toda a página */
+  a {
+    text-decoration: none;
+  }
+  
+  /* Define o espaço onde aparecera os filmes */
+  .filmes-actions-container {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  /* Define o espaço e a estilização da barra de pesquisa e do botão do filtro */
+  .pesquisa-container {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px auto;
+    
+    /* Define o tamanho e a estilização da barra de pesquisa */
+    input {
+      width: 825px;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      font-size: 16px;
+      background-color: #b0b0b0;
+      color: #ffffff;
+    }
+    
+    /* Deixa o texto dentro da barra de pesquisa mais escuro */
+    input::placeholder {
+      color: #222;
+      opacity: 1;
+    }
+
+    /* Cria o efeito quando está selecionado */
+    input:focus {
+      border-color: #222;
+    }
+
+    /* Define o tamanho e a estilização do botão de filtro */
+    button {
+      width: 25%;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    
+    .filter-btn {
+      background-color: #b0b0b0;
+      color: #000000;
+    }
+    
+    /* Cria o efeito quando passa com o mouse por cima */
+    button:hover {
+      background-color: #222;
+      color: #ffffff;
+    }
+  }
+
+  /* Define o espaço do grid onde aparecerá os filmes */
+  .filmes-grid {
+    width: 70%;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  /* Define a estilização do grid onde aparecerá os filmes */
+  .filme-item {
+    background: #222;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+
+    /* Cria um efeito para o grid aumentar seu tamanho ao passar o mouse */
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+  
+  /* Define a estilização da imagem dentro do grid onde aparecerá os filmes */
+  .filme-item img {
+    width: 100%;
+    height: auto;
+    max-width: 292px;
+    max-height: 400px;
+    border-radius: 8px;
+  }
+  
+  /* Define a estilização do título do filme dentro do grid onde aparecerá os filmes */
+  .filme-item p {
+    margin-top: 8px;
+    font-size: 18px;
+  }
+
+  /* Desfoca o fundo quando modal estiver aberto */
+  body.modal-open {
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+  }
+
+  /* Define a posição do Modal que vai conter as informações do filme */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+  }
+  
+  /* Define a estilização do Modal com as informações do filme */
+  .modal-content {
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    width: 1100px;
+    display: flex;
+    flex-direction: column; /* Posiciona os itens na vertical */
+    position: relative;
+  }
+  
+  /* Define a posição dos itens (Imagem e Informações) dentro do Modal*/
+  .modal-body {
+    display: flex;
+    flex-direction: row; /* Posiciona os itens na horizontal */
+    gap: 20px;
+  }
+  
+  /* Define o tamanho da imagem no Modal */
+  .modal-img img {
+    width: 400px;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  /* Define a posição da div com as informações no Modal */
+  .modal-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alinha o conteúdo ao topo */
+    flex: 1;
+    gap: 10px;
+  }
+  
+  /* Define a posição e estilização do título do filme no Modal */
+  .modal-info h2 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  /* Define a posição e estilização dos topícos coma as informações do filme no Modal */
+  .modal-info p {
+    margin: 0;
+    font-size: 18px;
+    align-items: left;
+    text-align: justify;
+    padding-top: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  /* Define a posição do botão para fechar o Modal */
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  /* Define a posição e estilização do botão para assistir o filme no Modal */
+  .watch-button {
+    margin-top: 20px;
+    padding: 14px 0;
+    width: 100%;
+    max-width: 300px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #e50914;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.6s, background-color 0.7s;
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    
+    /* Cria um efeito de ficar um pouco mais escuro e aumentar o tamanho ao passar o mouse por cima */
+    &:hover {
+      background-color: #b20710;
+      transform: scale(1.05);
+    }
+  }
+
+  /* Define a posição do Modal do filtro */
+  .modal-filter {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Define a estilização do Modal do filtro */
+  .modal-content-filter {
+    background: #222;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+  }
+  
+  /* Define a estilização do label dentro do Modal do filtro */
+  .modal-content-filter label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  /* Define a estilização das opções dentro da label no Modal do filtro */
+  .modal-content-filter input, .modal-content-filter select {
+    width: 100%;
+    background-color: #b0b0b0;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+  }
+  
+  /* Define a estilização dos botões no Modal do filtro */
+  .modal-content-filter button {
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    background-color: #b0b0b0;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  /* Cria um efeito nos botões ao passar o mouse encima */
+  .modal-content-filter button:hover {
+    background-color: #ffffff;
+    color: #000000;
+  }
+
+/* Responsividade */
+@media (max-width: 768px) {
+  h3 {
+    text-align: center;
+    padding-left: 0px;
+  }
+
+  .filmes-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .filme-item {
+    width: 90%;
+    max-width: 400px;
+  }
+  
+  .filme-item img {
+    width: 100%;
+    height: auto;
+  }
+
+  .pesquisa-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    input {
+      width: 90%;
+      max-width: 400px;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      font-size: 16px;
+      background-color: #b0b0b0;
+      color: #ffffff;
+    }
+
+    input::placeholder {
+      color: #222;
+      opacity: 1;
+    }
+
+    input:focus {
+      border-color: #222;
+    }
+
+    button {
+      width: 90%;
+      max-width: 400px;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+  }
+
+  .modal-content {
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .modal-img img {
+    width: 60%;
+    height: 100%;
+    border-radius: 10px;
+  }
+
+  .modal-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 1;
+    gap: 5px;
+  }
+
+  .modal-info p {
+    margin: 0;
+    font-size: 12px;
+    align-items: left;
+    text-align: justify;
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .modal-info h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .watch-button {
+    margin-top: 10px;
+    padding: 14px 0;
+    width: 100%;
+    max-width: 200px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform 0.6s, background-color 0.7s;
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

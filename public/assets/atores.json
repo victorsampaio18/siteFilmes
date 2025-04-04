@@ -1,0 +1,23 @@
+[
+    {
+        "nome": "Elizabeth Olsen",
+        "imagem": "https://stories.cnnbrasil.com.br/wp-content/uploads/sites/9/2024/10/1200px-Elizabeth_Olsen_by_Gage_Skidmore_2.jpg",
+        "genero": "Feminino",
+        "personagens": "Wanda Maximoff - Feiticeira Escarlate",
+        "filmes": "Vingadores - Era de Ultron | Capitão América - Guerra Civil | Vingadores - Guerra Infinita | Vingadores - Ultimato | Wandavision | Doutor Estranho no Multiverso da Loucura"
+    },
+    {
+        "nome": "Robert Downey Jr.",
+        "imagem": "https://m.media-amazon.com/images/M/MV5BNzg1MTUyNDYxOF5BMl5BanBnXkFtZTgwNTQ4MTE2MjE@._V1_FMjpg_UX1000_.jpg",
+        "genero": "Masculino",
+        "personagens": "Tony Stark - Homem de Ferro",
+        "filmes": "Homem de Ferro | Homem de Ferro 2 | Os Vingadores | Homem de Ferro 3 | Vingadores - Era de Ultron | Capitão América - Guerra Civil | Homem-Aranha - De Volta ao Lar | Vingadores - Guerra Infinita | Vingadores - Ultimato"
+    },
+    {
+        "nome": "Tom Holland",
+        "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6JAFdd6Eg0R0rzDrQpM2twoIs_IOxURv5Xg&s",
+        "genero": "Masculino",
+        "personagens": "Peter Parker - Homem-Aranha",
+        "filmes": "Capitão América - Guerra Civil | Homem-Aranha - De Volta ao Lar | Vingadores - Guerra Infinita | Vingadores - Ultimato | Homem-Aranha - Longe de Casa | Homem-Aranha - Sem Volta Para Casa"
+    }
+]
