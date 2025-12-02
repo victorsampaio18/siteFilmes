@@ -2,7 +2,7 @@
 
 ![Badge Finalizado](http://img.shields.io/static/v1?label=STATUS&message=FINALIZADO&color=GREEN&style=for-the-badge)
 
-O Movie App é um site moderno que exibe os filmes, atores e personagens da Marvel desenvolvido em **Angular.js**, com o conteúdo vindo atráves de um documento **JSON**, possuindo um sistema de busca inteligente e interface totalmente responsiva.
+O Movie App é um site moderno que exibe os filmes, atores e personagens da Marvel desenvolvido em **Angular.js**, com o conteúdo vindo através de um documento **JSON**, possuindo um sistema de busca inteligente e interface totalmente responsiva.
 
 # Funcionalidades
 - **Busca inteligente de filme, personagens e atores**
